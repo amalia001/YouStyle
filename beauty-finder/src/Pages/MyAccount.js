@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Icon } from 'semantic-ui-react';
 import './MyAccount.css'; // Import your CSS file for styling
 import Appointments from '../MyAccountComponents/Appointments';
 import Favourites from '../MyAccountComponents/Favourites';
@@ -6,11 +7,12 @@ import Settings from '../MyAccountComponents/Settings';
 import Notifications from '../MyAccountComponents/Notifications';
 
 const pageNames = {
-    'Appointments': <Appointments />,
-    'Favorites': <Favourites/>,
-    'Settings': <Settings/>,
-    'Notifications': <Notifications/>,
+    'Appointments': { "Component": <Appointments />, "Icon": "calendar alternate outline" },
+    'Favorites': { "Component": <Favourites />, "Icon": "heart outline" },
+    'Settings': { "Component": <Settings />, "Icon": "setting" },
+    'Notifications': { "Component": <Notifications />, "Icon": "bell outline" },
 };
+
 
 const MyAccount = () => {
     const [selectedPage, setSelectedPage] = useState('Appointments'); // Initial selected page
@@ -24,20 +26,24 @@ const MyAccount = () => {
             <div className="sidebar">
                 {
                     Object.keys(pageNames).map((pageName) => (
-                        <div 
-                          key={pageName} // Make sure to add a unique key for each element in the array
-                          onClick={() => handlePageChange(pageName)}
-                          className={`sidebar-item ${selectedPage === 'dashboard' ? 'active' : ''}`}
+                        <div
+                            key={pageName} // Make sure to add a unique key for each element in the array
+                            onClick={() => handlePageChange(pageName)}
+                            className={`sidebar-item ${pageName} ${selectedPage === pageName ? 'active' : ''}`}
                         >
-                          {pageName}
+                            <Icon name={pageNames[pageName]["Icon"]} />
+                            {pageName}
                         </div>
-                      ))
-                      
+                    ))
+
                 }
+
             </div>
             <div className="main-panel">
-                {pageNames[selectedPage]}
+                {pageNames[selectedPage]["Component"]}
             </div>
+
+
         </div>
     );
 };

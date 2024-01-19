@@ -7,7 +7,7 @@ const Appointments = () => {
     useEffect(() => {
         const fetchAppointments = async () => {
             try {
-                const response = await fetch('/appointments.json');
+                const response = await fetch('http://127.0.0.1:5000/get_data?filename=appointments.json');
                 const data = await response.json();
                 setAppointments(data); 
             } catch (error) {
@@ -21,8 +21,8 @@ const Appointments = () => {
     return (
         <div>
             {appointments.map((appointment, index) => (
-                <div key={index}>
-                    <h3>{`${appointment.client}-${appointment.salon}`}</h3>
+                <div key={index} className='appointment-container'>
+                    <h3>{`${appointment.stylist}-${appointment.salon}`}</h3>
                     <p>{`${appointment.date}-${appointment.time}`}</p>
                     <p>{`${appointment.location}`}</p>
 
