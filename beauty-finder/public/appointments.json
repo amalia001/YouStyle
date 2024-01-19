@@ -1,0 +1,89 @@
+[
+  {
+    "stylist": "John Doe",
+    "salon": "Elegance Spa",
+    "date": "15 January 2024",
+    "time": "10:00",
+    "location": "123 Main Street, Anytown",
+    "services": [
+      {
+        "name": "Manicure",
+        "duration": "45min",
+        "price": "$20",
+        "status": "Confirmed"
+      },
+      {
+        "name": "Deep Tissue Massage",
+        "duration": "1hr",
+        "price": "$50",
+        "status": "Confirmed"
+      }
+    ]
+  },
+  {
+    "stylist": "Alice Johnson",
+    "salon": "Glamour Hair Studio",
+    "date": "20 February 2024",
+    "time": "15:30",
+    "location": "456 Oak Avenue, Cityville",
+    "services": [
+      {
+        "name": "Haircut and Styling",
+        "duration": "1hr",
+        "price": "$35",
+        "status": "Confirmed"
+      }
+    ]
+  },
+  {
+    "stylist": "Robert Smith",
+    "salon": "Nail Art Studio",
+    "date": "05 March 2024",
+    "time": "14:00",
+    "location": "789 Pine Lane, Villagetown",
+    "services": [
+      {
+        "name": "Pedicure",
+        "duration": "1hr",
+        "price": "$25",
+        "status": "Confirmed"
+      }
+    ]
+  },
+  {
+    "stylist": "Emily Brown",
+    "salon": "Relaxation Haven",
+    "date": "10 April 2024",
+    "time": "12:45",
+    "location": "101 Maple Street, Hamletville",
+    "services": [
+      {
+        "name": "Hot Stone Massage",
+        "duration": "1hr",
+        "price": "$60",
+        "status": "Confirmed"
+      },
+      {
+        "name": "Facial Treatment",
+        "duration": "45min",
+        "price": "$30",
+        "status": "Confirmed"
+      }
+    ]
+  },
+  {
+    "stylist": "Sophie Miller",
+    "salon": "Chic Nail Bar",
+    "date": "25 May 2024",
+    "time": "16:30",
+    "location": "202 Cedar Road, Suburbia",
+    "services": [
+      {
+        "name": "Gel Manicure",
+        "duration": "1hr",
+        "price": "$40",
+        "status": "Confirmed"
+      }
+    ]
+  }
+]

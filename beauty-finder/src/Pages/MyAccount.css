@@ -1,7 +1,7 @@
 .my-account-container {
     display: flex;
-    padding: 20px; /* Adjust padding as needed */
-    margin-top: 75px;
+    padding:  30px 120px; /* Adjust padding as needed */
+    margin-top: 100px;
 }
 
 .sidebar {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Form, Dropdown, Icon } from 'semantic-ui-react';
+// import { Form, Dropdown, Icon } from 'semantic-ui-react';
 import L from 'leaflet';
 import pin from '../images/location-pin.png';
 import 'leaflet/dist/leaflet.css';
@@ -25,7 +25,7 @@ const SchedulingContainer = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/data.json');
+                const response = await fetch('data/data.json');
                 const data = await response.json();
                 setMarkers(data.markers);
             } catch (error) {
@@ -50,7 +50,8 @@ const SchedulingContainer = () => {
         <><div className='background-image-container'>
             {/* Your background image */}
             <img
-                src='https://www.salonsdirect.com/blog/wp-content/uploads/2019/01/nathon-oski-EW_rqoSdDes-unsplash-1536x1020.jpg'
+                //src='https://www.salonsdirect.com/blog/wp-content/uploads/2019/01/nathon-oski-EW_rqoSdDes-unsplash-1536x1020.jpg'
+                src='https://www.pexels.com/photo/black-salon-chairs-853427/'
                 alt='background'
                 className='background-image'
             />

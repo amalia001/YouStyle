@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
 import './MyAccount.css'; // Import your CSS file for styling
+import Appointments from '../MyAccountComponents/Appointments';
+import Favourites from '../MyAccountComponents/Favourites';
+import Settings from '../MyAccountComponents/Settings';
+import Notifications from '../MyAccountComponents/Notifications';
+
+const pageNames = {
+    'Appointments': <Appointments />,
+    'Favorites': <Favourites/>,
+    'Settings': <Settings/>,
+    'Notifications': <Notifications/>,
+};
 
 const MyAccount = () => {
-    const [selectedPage, setSelectedPage] = useState('dashboard'); // Initial selected page
+    const [selectedPage, setSelectedPage] = useState('Appointments'); // Initial selected page
 
     const handlePageChange = (page) => {
         setSelectedPage(page);
@@ -11,35 +22,21 @@ const MyAccount = () => {
     return (
         <div className="my-account-container">
             <div className="sidebar">
-                <div
-                    className={`sidebar-item ${selectedPage === 'dashboard' ? 'active' : ''}`}
-                    onClick={() => handlePageChange('dashboard')}
-                >
-                    Dashboard
-                </div>
-                <div
-                    className={`sidebar-item ${selectedPage === 'profile' ? 'active' : ''}`}
-                    onClick={() => handlePageChange('profile')}
-                >
-                    Profile
-                </div>
-                {/* Add more sidebar items as needed */}
+                {
+                    Object.keys(pageNames).map((pageName) => (
+                        <div 
+                          key={pageName} // Make sure to add a unique key for each element in the array
+                          onClick={() => handlePageChange(pageName)}
+                          className={`sidebar-item ${selectedPage === 'dashboard' ? 'active' : ''}`}
+                        >
+                          {pageName}
+                        </div>
+                      ))
+                      
+                }
             </div>
             <div className="main-panel">
-                <h1>My Account</h1>
-                {selectedPage === 'dashboard' && (
-                    <div>
-                        {/* Content for Dashboard page */}
-                        <p>Dashboard content goes here.</p>
-                    </div>
-                )}
-                {selectedPage === 'profile' && (
-                    <div>
-                        {/* Content for Profile page */}
-                        <p>Profile content goes here.</p>
-                    </div>
-                )}
-                {/* Add more content sections for other pages as needed */}
+                {pageNames[selectedPage]}
             </div>
         </div>
     );

@@ -35,11 +35,13 @@ const Navbar = ({ isLogged, onHandleLogin }) => {
       </Link>
       <div className="navbar-links">
         <Button onClick={onHandleLogin}>DEBUG: Log {isLogged ? 'Out' : 'In'}</Button>
+        <Icon name='calendar alternate outline' size='large' fluid />
         {isLogged ?
+
           <Link to="/my-account">
-            <Icon name='calendar alternate outline' size='large' />
+
             My appointments
-            </Link> :
+          </Link> :
           <Link to="/register">Register your salon</Link>
         }
         <Link to="/catalog">Catalog</Link>
