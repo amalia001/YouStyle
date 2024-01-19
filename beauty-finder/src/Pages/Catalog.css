@@ -1,0 +1,52 @@
+/* Catalog.css */
+
+/* Style for the main container */
+.catalog-page {
+  padding: 20px;
+  margin: 75px; /* Adjust margin as needed */
+  background-color: #f0f0f0;
+}
+
+/* Style for the header text */
+h1 {
+  font-size: 24px;
+}
+
+/* Style for the additional text */
+p {
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.label-element {
+  display: inline-block;
+  margin: 0 10px; /* Adjust margin as needed */
+  width: calc(50% - 20px);
+}
+
+/* Style for the selection inputs */
+label {
+  display: block;
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style for the catalog images */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0; /* Adjust margin as needed */
+}

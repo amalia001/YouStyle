@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+/* .services-form {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 3%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(119, 53, 15, 0.2);
+} */
+
+.custom-form {
+  width:98%;
+  padding: 20px;
+  margin: auto;
+  margin-top:2%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 1000;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(119, 53, 15, 0.2);
+}
+
+.custom-form-field {
+  margin-bottom: 10px;
+}
+
+.custom-dropdown {
+  border-color: black;
+}
+
+.custom-dropdown .text {
+  color: black; /* Replace with your desired font color */
+}
+
+.custom-dropdown .menu .item:hover {
+  background-color: #f5f5f5;
+}
+
+.custom-datepicker-field{
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.custom-calendar-field{
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #e7e3e3;
+  border-radius: 5px;
+  padding: 9px;
+  align-items: left;
+  justify-content: left;
+  /* color: #bdb3b3; */
+}
+
+.custom-calendar-field:hover{
+  border: 1px solid #9b9998;
+}
+
+
+

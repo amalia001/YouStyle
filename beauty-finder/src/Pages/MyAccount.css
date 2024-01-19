@@ -1,0 +1,30 @@
+.my-account-container {
+    display: flex;
+    padding: 20px; /* Adjust padding as needed */
+    margin-top: 75px;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.sidebar-item {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    &:hover {
+        background-color: #ddd;
+    }
+}
+
+.sidebar-item.active {
+    background-color: #bbb;
+}
+
+.main-panel {
+    flex: 1;
+    padding: 0 20px; /* Adjust padding as needed */
+}

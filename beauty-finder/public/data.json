@@ -1,0 +1,45 @@
+{
+    "markers": [
+      {
+        "name": "John Doe",
+        "position": [47.123, 27.456]
+      },
+      {
+        "name": "Jane Smith",
+        "position": [47.789, 27.890]
+      },
+      {
+        "name": "Alice Johnson",
+        "position": [48.135, 26.987]
+      },
+      {
+        "name": "Bob Williams",
+        "position": [48.567, 27.321]
+      },
+      {
+        "name": "Eva Davis",
+        "position": [47.987, 27.654]
+      },
+      {
+        "name": "Mike Taylor",
+        "position": [48.456, 27.123]
+      },
+      {
+        "name": "Sophie Brown",
+        "position": [47.345, 27.890]
+      },
+      {
+        "name": "David Miller",
+        "position": [48.012, 27.234]
+      },
+      {
+        "name": "Olivia White",
+        "position": [47.678, 26.789]
+      },
+      {
+        "name": "William Wilson",
+        "position": [48.789, 27.432]
+      }
+    ]
+  }
+  

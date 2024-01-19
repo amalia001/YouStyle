@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import "~leaflet/dist/leaflet.css";
+
+.navbar {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+    height: 60px;
+}
+
+.navbar-button {
+    height: 10%;
+    color: black;
+    background-color: white;
+    border: none;
+    margin-left: 5%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-button:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 1000;
+    text-decoration: none;
+}
+
+.navbar-links {
+    margin-left: auto; /* Move the navbar-links to the right */
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    text-decoration: bold;
+    font-size: 18px;
+    text-align: left;
+    color: black;
+    text-decoration: none;
+    margin-right: 35px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    /* Add smooth transition */
+}
+
+.navbar-links a:hover {
+    color: #fba344;
+    text-decoration: underline;
+}
+
+.profile-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin-right: 5px;
+}
+
+
+
+.arrow-icon {
+    font-size: 14px;
+    transform: rotate(0deg); /* Initial rotation */
+    transition: transform 0.4s ease; /* Add transition for smooth effect */
+}
+
+.profile-button:hover .arrow-icon {
+    transform: rotate(180deg); /* Rotate to 180 degrees on hover */
+}
+
+.profile-button:not(:hover) .arrow-icon {
+    transition: transform 0.4s ease; /* Add transition when not hovering */
+}
+
+.popup {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    z-index: 3;
+}
+
+.popup span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #ccc; 
+}
+
+.popup span:hover {
+    background-color: #fba344;
+    color: white;
+}
+
+.popup span:last-child {
+    border-bottom: none; 
+}
+
