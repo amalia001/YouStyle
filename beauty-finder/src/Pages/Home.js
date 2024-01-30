@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.css';
 import ServicesForm from './ServicesForm';
 import StylistsForm from './StylistsForm';
 import './Home.css';
+import homeImage from '../images/salon_computer2.png';
 
 const customIcon = new L.Icon({
     iconUrl: pin,
@@ -47,73 +48,71 @@ const SchedulingContainer = () => {
         if (name === 'Stylists') setIsStylists(true);
     }
     return (
-        <><div className='background-image-container'>
-            {/* Your background image */}
-            <img
-                src='https://www.salonsdirect.com/blog/wp-content/uploads/2019/01/nathon-oski-EW_rqoSdDes-unsplash-1536x1020.jpg'
-                // src='https://www.pexels.com/photo/black-salon-chairs-853427/'
-                alt='background'
-                className='background-image'
-            />
+        <div className='background-container'>
+            <div className='home-title-container'>
+                <h1>The online catalogue of <span style={{ color: '#f72585' }}>beauty</span> services</h1>
+                <div className='scheduling-container'>
+                    <div className="scheduling-container-header">
+                        <button
+                            className={isServices ? "active" : ""}
+                            onClick={() => { handleClick('Services') }}
+                        >
+                            Services
+                        </button>
+                        <button
+                            className={isSalons ? "active" : ""}
+                            onClick={() => { handleClick('Salons') }}
+                        >
+                            Salons
+                        </button>
+                        <button
+                            className={isStylists ? "active" : ""}
+                            onClick={() => { handleClick('Stylists') }}
+                        >
+                            Stylists
+                        </button>
 
-        </div>
-            <div className="scheduling-container">
-                <h1 className='scheduling-container-title'>Discover beauty services and make an appointment!</h1>
-                <div className="segment-header">
-                    <button
-                        className={isServices ? "active" : ""}
-                        onClick={() => { handleClick('Services') }}
-                    >
-                        Services
-                    </button>
-                    <button
-                        className={isSalons ? "active" : ""}
-                        onClick={() => { handleClick('Salons') }}
-                    >
-                        Salons
-                    </button>
-                    <button
-                        className={isStylists ? "active" : ""}
-                        onClick={() => { handleClick('Stylists') }}
-                    >
-                        Stylists
-                    </button>
-
-                </div>
-                <div className="segment-content">
-                    {isServices &&
-                        //    <form onSubmit={handleSubmit}>
-                        <ServicesForm />
-                    }
-                    {isSalons && (
-                        <div>
-                            {/* <p>is salons!</p> */}
-                            {/* Map View */}
-                            <MapContainer
-                                center={[47.1591, 27.5879]} // Iasi city coordinates
-                                zoom={13}
-                                style={{ height: '280px', width: '100%' }}
-                            >
-                                <TileLayer
-                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                                />
-                                {markers.map((marker, index) => (
-                                    <Marker key={index} position={marker.position} icon={customIcon}>
-                                        <Popup>
-                                            {marker.name}
-                                        </Popup>
-                                    </Marker>
-                                ))}
-                            </MapContainer>
-                        </div>
-                    )}
-                    {isStylists &&
-                        (<StylistsForm></StylistsForm>)
-                    }
+                    </div>
+                    <div className="segment-content">
+                        {isServices &&
+                            //    <form onSubmit={handleSubmit}>
+                            <ServicesForm />
+                        }
+                        {isSalons && (
+                            <div>
+                                <MapContainer
+                                    center={[47.1591, 27.5879]} // Iasi city coordinates
+                                    zoom={13}
+                                    style={{ height: '280px', width: '100%', marginTop: '10px', borderRadius: '10px'}}
+                                >
+                                    <TileLayer
+                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                    />
+                                    {markers.map((marker, index) => (
+                                        <Marker key={index} position={marker.position} icon={customIcon}>
+                                            <Popup>
+                                                {marker.name}
+                                            </Popup>
+                                        </Marker>
+                                    ))}
+                                </MapContainer>
+                            </div>
+                        )}
+                        {isStylists &&
+                            (<StylistsForm></StylistsForm>)
+                        }
+                    </div>
                 </div>
             </div>
-        </>
+
+            <div className='home-image-container'>
+                <img src={homeImage} alt='HomeImage' className='home-image' />
+
+
+            </div>
+        </div>
+        
     );
 }
 

@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import "~leaflet/dist/leaflet.css";
 
-body {
-  background-color: #e0e0e0;
+body,
+html {
+    margin: 0;
+    padding: 0;
 }
 
 .App {

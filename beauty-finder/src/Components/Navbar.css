@@ -36,9 +36,9 @@
 }
 
 .logo-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
-    font-weight: 1000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -49,10 +49,9 @@
 }
 
 .navbar-links a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 1000;
-    text-decoration: bold;
-    font-size: 18px;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
     text-align: left;
     color: black;
     text-decoration: none;
@@ -62,7 +61,7 @@
 }
 
 .navbar-links a:hover {
-    color: #fba344;
+    color: #00b4d8;
     text-decoration: underline;
 }
 
@@ -70,7 +69,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-right: 5%;
+    margin-right: 2%;
     cursor: pointer;
 }
 
@@ -106,14 +105,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    min-width: 120px;
+    min-width: 150px;
     z-index: 3;
 }
 
 .popup span {
-    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 400; 
+    text-align: left;
     padding: 10px;
     text-decoration: none;
     color: black;
@@ -122,7 +121,7 @@
 }
 
 .popup span:hover {
-    background-color: #fba344;
+    background-color: #00b4d8;
     color: white;
 }
 

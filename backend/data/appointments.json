@@ -11,13 +11,8 @@
         "duration": "45min",
         "price": "$20",
         "status": "Confirmed"
-      },
-      {
-        "name": "Deep Tissue Massage",
-        "duration": "1hr",
-        "price": "$50",
-        "status": "Confirmed"
       }
+
     ]
   },
   {
@@ -31,7 +26,7 @@
         "name": "Haircut and Styling",
         "duration": "1hr",
         "price": "$35",
-        "status": "Confirmed"
+        "status": "Cancelled"
       }
     ]
   },
@@ -46,7 +41,7 @@
         "name": "Pedicure",
         "duration": "1hr",
         "price": "$25",
-        "status": "Confirmed"
+        "status": "Pending"
       }
     ]
   },
@@ -61,12 +56,6 @@
         "name": "Hot Stone Massage",
         "duration": "1hr",
         "price": "$60",
-        "status": "Confirmed"
-      },
-      {
-        "name": "Facial Treatment",
-        "duration": "45min",
-        "price": "$30",
         "status": "Confirmed"
       }
     ]

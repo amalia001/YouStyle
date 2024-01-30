@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .my-account-container {
-    font-family: 'Montserrat', sans-serif;
+    /* background-color: #ebe8ec; */
+    /* margin-top: 0px; */
+    /* font-family: 'Montserrat', sans-serif; */
     font-size: 16px;
     font-weight: 1000;
     display: flex;
@@ -54,5 +56,95 @@
     padding: 20px;
     margin-bottom: 30px;
 }
+
+
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.appointment-container h3{
+    margin-left: 7%;
+    width: 100%;
+    color: #273f56;
+    text-align: left;
+    align-items: left;
+    justify-content: left;
+    display: flex;
+}
+
+.custom-app-date{
+    margin-left: 7%;
+    text-align: left;
+    align-items: left;
+    margin-bottom: 3px;
+}
+
+.custom-app-location{
+    margin-left: 7%;
+    text-align: left;
+    align-items: left;
+    color: #273f56;
+    margin-bottom: 4%;
+}
+
+.service-container {
+    display: flex;
+    text-align: left;
+    align-items: left;
+    margin-bottom: 7px;
+    /* border: 2px solid #273f56; */
+}
+
+.service-name {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+.service-price {
+    flex-shrink: 0; /* Do not shrink */
+    font-weight: 1000;
+    margin-right: 5%;
+}
+
+.service-duration{
+    color:#a5a2a8;
+    text-align: left;
+    align-items: left;
+    margin-bottom: 7px;
+}
+
+
+.service-status {
+    padding: 5px;
+    border-radius: 15px;
+    width: 20%;
+    height: 30px;
+}
+
+.confirmed {
+    background-color: #bcf1d1;
+    color: #17bc57;
+}
+
+.cancelled {
+    background-color: #fbc4bb;
+    color: #dd1c03;
+}
+
+.pending {
+    background-color: #a5a2a8;
+}
+
 
 

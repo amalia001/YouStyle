@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import SchedulingContainer from './Pages/Home.js';
-import Register from './Pages/Register.js';
+// import Register from './Pages/Register.js';
 import MyAccount from './Pages/MyAccount.js';
 import Catalog from './Pages/Catalog.js';
-import Contact from './Pages/Contact.js';
 import './App.css';
 import  Navbar from './Components/Navbar.jsx';
+import './GlobalStyles.css'
+import CreateBusinessAccount from './Pages/CreateBusinessAccount.js';
+import RegisterSalon from './Pages/RegisterSalon.js';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -16,10 +18,11 @@ function App() {
         <Navbar isLogged={loggedIn} onHandleLogin={() => setLoggedIn(!loggedIn)} />
         <Routes>
           <Route path="/home"  element={<SchedulingContainer/>} /> 
-          <Route path="/register"  element={<Register/>} />
+          {/* <Route path="/register"  element={<Register/>} /> */}
           <Route path="/my-account"  element={<MyAccount/>} />
           <Route path="/catalog"  element={<Catalog/>} />
-          <Route path="/contact"  element={<Contact/>} />
+          <Route path="/create-business-account"  element={<CreateBusinessAccount/>} />
+          <Route path="/register-salon" element={<RegisterSalon/>} />
         </Routes>
       </Router>
     </div>

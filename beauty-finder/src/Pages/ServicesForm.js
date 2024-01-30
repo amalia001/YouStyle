@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import 'semantic-ui-css/semantic.min.css'; // Import the Semantic UI CSS
 import './ServicesForm.css';
+// import './GlobalStyles.css';
 
 
 const CustomDate = () => {
@@ -30,10 +31,7 @@ const CustomDate = () => {
                         Date and Time Span:
                     </span>
                     {/* <label htmlFor="date">Date and Time Span: </label> */}
-                    <label htmlFor="date" style={{ marginRight: '10px', marginBottom:'0' }}>{selectedDate.toLocaleDateString()}</label>
-                    {/* <label htmlFor="time">Select Time: </label> */}
-                    <label htmlFor="time" style={{ marginRight: '10px', marginBottom:'0' }}>{startTime} - {endTime}</label>
-                    {/* date picker */}
+                    <label htmlFor="date" style={{ marginRight: '10px', marginBottom: '0', marginLeft: '20px' }}>{selectedDate.toLocaleDateString()}, {startTime} - {endTime}</label>
                 </div>
             } on="click"
             position="bottom center"
@@ -79,9 +77,9 @@ const genderOptions = [
 ];
 
 const buttonStyle = {
-    width: '50%',
-    backgroundColor: '#fba344',
-    fontFamily: 'Montserrat', 
+    width: '100%',
+    backgroundColor: '#00b4d8',
+    fontFamily: 'Poppins',
     color: 'white',
     transition: 'background-color 0.3s', // Add a smooth transition effect
     marginTop: '10px',
@@ -89,7 +87,7 @@ const buttonStyle = {
 };
 
 const buttonHoverStyle = {
-    backgroundColor: '#d7852c',
+    backgroundColor: '#00a2d8',
 };
 
 
@@ -110,52 +108,39 @@ const ServicesForm = () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit} className="custom-form">
-            <Form.Field className="custom-form-field">
-                <Dropdown
-                    selection
-                    options={genderOptions}
-                    placeholder={
-                        <span style={{ color: 'black' }}>
-                            <Icon name="user circle" /> Select your gender
-                        </span>
-                    }
-                    clearable
-                    className="custom-dropdown"
-                />
-            </Form.Field>
+        
+            <Form onSubmit={handleSubmit} className="custom-form">
+                <Form.Field className="custom-form-field">
+                    <Dropdown
+                        className="custom-dropdown"
+                        selection
+                        options={serviceOptions}
+                        placeholder={
+                            <span style={{ color: 'black' }}>
+                                <Icon name="cut icon" /> Select a service
+                            </span>
+                        }
+                        clearable
+                    />
+                </Form.Field>
 
-            <Form.Field className="custom-form-field">
-                <Dropdown
-                    className="custom-dropdown"
-                    selection
-                    options={serviceOptions}
-                    placeholder={
-                        <span style={{ color: 'black' }}>
-                            <Icon name="cut icon" /> Select a service
-                        </span>
-                    }
-                    clearable
-                />
-            </Form.Field>
+                <CustomDate className="custom-calendar-field" />
 
-            <CustomDate className="custom-calendar-field" />
+                <Button
+                    type="submit"
+                    style={{
+                        ...buttonStyle,
+                        backgroundColor: isButtonHovered ? buttonHoverStyle.backgroundColor : buttonStyle.backgroundColor,
+                    }}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <Icon name="search" /> Search for beauty services
+                </Button>
+            </Form>
 
-            {/* <Button type="submit" style={{width:'100%', backgroundColor: '#fba344', color: 'white' }}>Submit</Button> */}
-
-            <Button
-                type="submit"
-                style={{
-                    ...buttonStyle,
-                    backgroundColor: isButtonHovered ? buttonHoverStyle.backgroundColor : buttonStyle.backgroundColor,
-                }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                <Icon name="search" /> Search for beauty services
-            </Button>
-
-        </Form>
+           
+    
     );
 };
 

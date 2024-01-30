@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import { Icon } from 'semantic-ui-react';
+// import '../MyAccount.css';
+// import profilepic from '../images/profilepic.jpg';
 
 const Appointments = () => {
     const [appointments, setAppointments] = useState([]);
@@ -9,7 +11,7 @@ const Appointments = () => {
             try {
                 const response = await fetch('http://127.0.0.1:5000/get_data?filename=appointments.json');
                 const data = await response.json();
-                setAppointments(data); 
+                setAppointments(data);
             } catch (error) {
                 console.error('Error fetching appointments:', error);
             }
@@ -22,18 +24,41 @@ const Appointments = () => {
         <div>
             {appointments.map((appointment, index) => (
                 <div key={index} className='appointment-container'>
-                    <h3>{`${appointment.stylist}-${appointment.salon}`}</h3>
-                    <p>{`${appointment.date}-${appointment.time}`}</p>
-                    <p>{`${appointment.location}`}</p>
-
-                    {appointment.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex}>
-                            <p>{`${service.name}`}</p>
-                            <p>{`${service.price}`}</p>
-                            <p>{`${service.duration}`}</p>
-                            <p>{`${service.status}`}</p>
+                    {/* <div className="profile-picture">
+                        <img src='./profile.png' alt="Stylist Profile" />
+                    </div> */}
+                    <div className>
+                        <h3>{`${appointment.stylist} • ${appointment.salon}`}</h3>
+                        <div className='custom-app-date'>
+                            <Icon name='calendar alternate outline' />
+                            {`${appointment.date}, ${appointment.time}`}
                         </div>
-                    ))}
+                        <div className='custom-app-location'>
+                            <Icon name='map marker alternate' />
+                            {`${appointment.location}`}
+                        </div>
+                        {appointment.services.map((service, serviceIndex) => (
+                            <div key={serviceIndex} >
+                                <div className="service-container">
+                                    <div className="service-name">
+                                        {`${service.name}`}
+                                    </div>
+                                    <div className="service-price">
+                                        {`${service.price}`}
+                                    </div>
+                                </div>
+                                <div className="service-duration">
+                                    {`${service.duration}`}
+                                </div>
+                                <div className={`service-status ${service.status === 'Confirmed' ? 'confirmed' : (service.status === 'Cancelled' ? 'cancelled' : 'pending')}`}>
+                                    {service.status === 'Confirmed' && <Icon name='check circle' color='green' />}
+                                    {service.status === 'Cancelled' && <Icon name='cancel' color='red' />}
+                                    {service.status === 'Pending' && <Icon name='clock' color='grey' />}
+                                    {`${service.status}`}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             ))}
         </div>

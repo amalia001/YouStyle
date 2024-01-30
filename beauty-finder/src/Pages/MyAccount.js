@@ -5,6 +5,7 @@ import Appointments from '../MyAccountComponents/Appointments';
 import Favourites from '../MyAccountComponents/Favourites';
 import Settings from '../MyAccountComponents/Settings';
 import Notifications from '../MyAccountComponents/Notifications';
+import './GlobalStyles.css';
 
 const pageNames = {
     'Appointments': { "Component": <Appointments />, "Icon": "calendar alternate outline" },

@@ -1,5 +1,5 @@
-import React  from 'react';
-import { Form, Dropdown, Icon } from 'semantic-ui-react';
+import React, {useState}  from 'react';
+import { Form, Dropdown, Icon, Button } from 'semantic-ui-react';
 import './ServicesForm.css';
 
 const StylistsForm = () => {
@@ -12,6 +12,30 @@ const StylistsForm = () => {
     const filterStylists = (options, query) => {
         const re = new RegExp(query, 'i');
         return options.filter((option) => re.test(option.text));
+    };
+
+    const buttonStyle = {
+        width: '100%',
+        backgroundColor: '#00b4d8',
+        fontFamily: 'Montserrat',
+        color: 'white',
+        transition: 'background-color 0.3s', // Add a smooth transition effect
+        marginTop: '10px',
+    
+    };
+    
+    const buttonHoverStyle = {
+        backgroundColor: '#00a2d8',
+    };
+
+    const [isButtonHovered, setIsButtonHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsButtonHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsButtonHovered(false);
     };
 
     return (
@@ -30,6 +54,17 @@ const StylistsForm = () => {
                     clearable
                     filterOptions={(options, query) => filterStylists(options, query)}
                 />
+                <Button
+                    type="submit"
+                    style={{
+                        ...buttonStyle,
+                        backgroundColor: isButtonHovered ? buttonHoverStyle.backgroundColor : buttonStyle.backgroundColor,
+                    }}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <Icon name="search" /> Find stylist
+                </Button>
             </Form.Field>
 
 
