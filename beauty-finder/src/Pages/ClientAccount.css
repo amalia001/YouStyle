@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 .my-account-container {
-    /* background-color: #ebe8ec; */
+    background-color: #CAF0F8;
     /* margin-top: 0px; */
-    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-weight: 1000;
     display: flex;
     padding:  30px 120px; /* Adjust padding as needed */
-    margin-top: 100px;
+    margin-top: 75px;
+    color: black !important;
 }
 
 .sidebar {
@@ -23,6 +23,7 @@
 .sidebar-item {
     cursor: pointer;
     padding: 10px;
+    color: black;
     margin-bottom: 10px;
     /* border-radius: 5px; */
     text-align: left;
@@ -37,7 +38,7 @@
 
 
 .sidebar-item.active {
-    border-left: 4px solid #fba344; 
+    border-left: 4px solid #48CAE4; 
     padding-left: 12px; 
 }
 
@@ -76,7 +77,7 @@
 .appointment-container h3{
     margin-left: 7%;
     width: 100%;
-    color: #273f56;
+    color:black;
     text-align: left;
     align-items: left;
     justify-content: left;
@@ -113,8 +114,12 @@
 
 .service-price {
     flex-shrink: 0; /* Do not shrink */
-    font-weight: 1000;
+    font-weight: 400;
     margin-right: 5%;
+}
+
+.service-price span{
+    
 }
 
 .service-duration{

@@ -8,7 +8,6 @@ import './Navbar.css';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import { Button } from 'semantic-ui-react';
-import './GlobalStyles.css'
 
 
 
@@ -52,7 +51,7 @@ const Navbar = ({ isLogged, onHandleLogin }) => {
         <Link to="/salons">Salons</Link>
         <Icon name='calendar alternate outline' size='large' fluid />
         {isLogged ?
-
+          
           <Link to="/my-account">
 
             My appointments

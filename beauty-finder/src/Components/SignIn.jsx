@@ -73,8 +73,8 @@ const SignInForm = ({ onClose, onSwitchToRegister }) => {
                     <Form.Field className='custom-signin-form-field'>
                         <Input
                             className='custom-input-field'
-                            placeholder='Email'
-                            type='email'
+                            placeholder='Phone number'
+                            type='tel'
                             value={email}
                             onChange={handleEmailChange}
                         />

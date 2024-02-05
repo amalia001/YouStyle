@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Icon } from 'semantic-ui-react';
-import './MyAccount.css'; // Import your CSS file for styling
+import './ClientAccount.css'; // Import your CSS file for styling
 import Appointments from '../MyAccountComponents/Appointments';
 import Favourites from '../MyAccountComponents/Favourites';
 import Settings from '../MyAccountComponents/Settings';
@@ -15,7 +15,7 @@ const pageNames = {
 };
 
 
-const MyAccount = () => {
+const ClientAccount = () => {
     const [selectedPage, setSelectedPage] = useState('Appointments'); // Initial selected page
 
     const handlePageChange = (page) => {
@@ -49,4 +49,4 @@ const MyAccount = () => {
     );
 };
 
-export default MyAccount;
+export default ClientAccount;

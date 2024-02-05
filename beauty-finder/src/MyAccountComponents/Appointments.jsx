@@ -44,14 +44,25 @@ const Appointments = () => {
                                         {`${service.name}`}
                                     </div>
                                     <div className="service-price">
+                                        {/* <span>Price:</span> */}
                                         {`${service.price}`}
                                     </div>
                                 </div>
                                 <div className="service-duration">
                                     {`${service.duration}`}
                                 </div>
+                                <div className="service-container">
+                                    <div className="service-name">
+                                        <span>Operational services</span>
+                                    </div>
+                                    <div className="service-price">
+                                        {/* <span>Price:</span> */}
+                                        <span>$3</span>
+                                    </div>
+                                </div>
+                               
                                 <div className={`service-status ${service.status === 'Confirmed' ? 'confirmed' : (service.status === 'Cancelled' ? 'cancelled' : 'pending')}`}>
-                                    {service.status === 'Confirmed' && <Icon name='check circle' color='green' />}
+                                {service.status === 'Confirmed' && <Icon name='check circle' color='green' />}
                                     {service.status === 'Cancelled' && <Icon name='cancel' color='red' />}
                                     {service.status === 'Pending' && <Icon name='clock' color='grey' />}
                                     {`${service.status}`}

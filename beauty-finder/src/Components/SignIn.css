@@ -25,9 +25,9 @@
 }
 
 .signin-content h2{
-    color: #273f56;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    color:black;
 }
 
 .custom-signin-form {
@@ -102,21 +102,6 @@
     transition: 'background-color 0.3s, color 0.3s';
 }
 
-/* .custom-alternative-signup{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 1000;
-    font-size: 15px;
-    color: #273f56;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    max-width: 500px;
-    padding: 10px;
-    cursor: pointer;
-    transition: 'background-color 0.3s, color 0.3s';
-} */
 
 .custom-alternative-signup {
     display: flex;
@@ -124,7 +109,6 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 15px;
-    color: #273f56;
     align-items: center;
     justify-content: center;
     margin: auto;

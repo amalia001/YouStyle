@@ -19,6 +19,7 @@ const PersonalData = () => {
                     <label>Email:</label>
                     <input type="text" placeholder="Email" />
                 </div>
+                
             </Form>
         </div>
     );

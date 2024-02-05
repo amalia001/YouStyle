@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 @import "~leaflet/dist/leaflet.css";
 
 .navbar {
     background-color: white;
+    font-family: 'Poppins', sans-serif;
     position: fixed;
     top: 0;
     left: 0;
@@ -50,7 +51,7 @@
 
 .navbar-links a {
     font-family: 'poppins', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 17px;
     text-align: left;
     color: black;
@@ -107,9 +108,11 @@
     flex-direction: column;
     min-width: 150px;
     z-index: 3;
+    transition: 0.3s ease;
 }
 
 .popup span {
+    font-family: 'poppins', sans-serif;
     font-size: 15px;
     font-weight: 400; 
     text-align: left;
@@ -120,10 +123,10 @@
     border-bottom: 1px solid #ccc; 
 }
 
-.popup span:hover {
+ .popup span:hover {
     background-color: #00b4d8;
     color: white;
-}
+ }
 
 .popup span:last-child {
     border-bottom: none; 

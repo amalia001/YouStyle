@@ -1,20 +1,22 @@
-
-
 .full-screen {
-    height: 100vh;
+    min-height: 100vh;
     /* Ensure the full height of the viewport */
     overflow: hidden;
     /* Prevent vertical scrollbar */
 }
 
-.register-salon-main-panel{
+.register-salon-main-panel {
+    min-height: 70vh;
     width: 100%;
     padding: 30px;
+    background-color: #cfeef4;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
 }
 
 .register-salon-sidebar {
     width: 25%;
-    height: 100%;
+    /* height: 100vh; */
     background-color: rgb(255, 255, 255);
     border-radius: 0px;
     /* padding: 50px 10px 50px 50; */
@@ -38,26 +40,21 @@
 }
 
 .register-salon-sidebar-item.selected {
-    /* background-color: #007bff;  */
     color: black;
     font-weight: bold;
-    /* Set your desired text color for the selected item */
 }
 
 .register-salon-sidebar-item.done {
     color: green;
-    /* font-weight: bold; */
 
 }
 
 .register-salon-sidebar-item.selected .icon {
     color: green;
-    /* Set your desired color for the icon */
 }
 
 .register-salon-sidebar-item.done .icon {
     color: green;
-    /* Set your desired color for the icon */
 }
 
 
@@ -73,7 +70,7 @@
     width: 100%;
     text-decoration: none;
     margin-bottom: 2%;
-    margin-top: 75px;
+    margin-top: 30px;
     text-align: left;
     padding-top: 0px;
     padding-left: 50px;
@@ -99,25 +96,20 @@
     font-weight: 400;
     padding-top: 0px;
     padding-bottom: 0px;
+    margin-right: 100px;
+    /* margin-bottom: 60px; */
 }
 
 
-.horizontal-bar {
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    width: 100%;
-    height: 15%;
-    /* Set your desired height for the bar */
-    background-color: white;
-    /* Set your desired color for the bar */
-}
+
+
+/* Personal Data */
 
 .personal-data-form-container {
     display: flex;
     flex-wrap: wrap;
     /* Allow items to wrap to the next row */
-     margin-bottom:100px;
+    margin-bottom: 100px;
 }
 
 .input-wrapper {
@@ -130,8 +122,7 @@
 
 .personal-data-form-container input {
     width: 100%;
-    /* margin-bottom:100px; */
-    /* Make the input fill the entire width of its container */
+    max-width: 100%;
 }
 
 .personal-data-form-container label {
@@ -141,8 +132,180 @@
     /* Add some space between the label and the input */
 }
 
-.next-button{
-    background-color: #00b4d8 !important; 
+/*Company data*/
+
+.description-input-container {
+    max-width: 85%;
+    margin-top: 40px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #495057;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    display: block;
+}
+
+/* Salon Portfolio */
+
+.photo-upload-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.photo-upload-row input[type="file"] {
+    margin-right: 10px;
+}
+
+.uploaded-photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.uploaded-photo {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.uploaded-photo img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-upload-container button {
+    padding: 8px 16px;
+    background-color: #00b4d8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload-container button:hover {
+    background-color: #00a2d8;
+}
+
+.file-upload-container input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 100px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+/* Working Schedule */
+
+.working-schedule-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day-container {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin: 10px;
+    margin-left: 0px;
+    width: 40%;
+    /* Adjust the width as needed */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-switch-container {
+    display: flex;
+    align-items: center;
+    /* margin-left: 30px; */
+}
+
+.day-switch-container h3 {
+
+    align-items: center;
+    /* margin-left: 30px; */
+}
+
+.day-container .switch-container {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+
+.even {
+    clear: both;
+}
+
+
+.ui.toggle.checkbox input:checked~label:before,
+.ui.toggle.checkbox input:focus:checked~label:before {
+    background-color: #00b4d8 !important;
+}
+
+
+
+.time-inputs {
+    display: flex;
+    flex-direction: row;
+    /* Change to row to display inputs horizontally */
+    align-items: center;
+}
+
+.time-inputs input {
+    margin-right: 15px;
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* padding-left: 15px ; */
+    text-align: center;
+}
+
+.react-switch-bg {
+    background-color: #00b4d8;
+    /* Set the desired color for the background */
+    border: 2px solid #00b4d8;
+    /* Set the desired border color for the background */
+    width: 5px;
+    height: 5px;
+}
+
+.ui.toggle.checkbox input {
+    /* width: 3.5rem; */
+    /* height: 1.5rem rem; */
+    width: 10px;
+    height: 2px;
+}
+
+/* Horizontal bar */
+
+.horizontal-bar {
+    position: fixed;
+    bottom: 0;
+    left: 25%;
+    width: 100%;
+    height: 15%;
+    background-color: white;
+}
+
+.next-button {
+    background-color: #00b4d8 !important;
     font-family: 'Poppins' !important;
     font-size: 16px !important;
     color: white !important;
@@ -157,4 +320,69 @@
 
 .next-button:hover {
     background-color: #00a2d8 !important;
+}
+
+/* StylistForm.css */
+.stylist-box {
+    background-color: #e8f9fc;
+    border: 1px solid #ddd;
+    width: 60%;
+    padding: 15px;
+    margin: 15px 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stylist-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  
+
+.stylist-details {
+    display: flex;
+    align-items: center;
+}
+
+.stylist-services {
+    margin-top: 10px;
+}
+
+.stylist-services ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Add flex display to make the services appear horizontally */
+    flex-wrap: wrap; /* Allow services to wrap to the next line */
+    max-width: 100%; /* Set a max-width to limit the width of the container */
+}
+
+.stylist-services li {
+    margin-right: 10px; /* Add margin-right to separate the service names */
+    color: #555;
+}
+
+.stylist-services li::before {
+    content: '\2022'; /* Unicode character for a black dot */
+    color: black;
+    display: inline-block;
+    width: 1em; /* Adjust the width as needed */
+    margin-right: 0em; /* Adjust the spacing between the dot and text */
+}
+
+.stylist-form label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin:10px;
+    color: black;
+}
+
+.stylist-form input{
+   width:40%;
+   /* border: 1px solid #ccc; */
+   border-radius: 5px;
+   height: 30px;
 }

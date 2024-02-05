@@ -10,6 +10,7 @@
 }
 
 .home-title-container {
+  font-family: 'Popins', sans-serif;
   text-decoration: none;
   margin-bottom: 2%;
   margin-top: 75px;
@@ -22,7 +23,7 @@
 .home-title-container h1 {
   font-family: 'Popins', sans-serif;
   font-size: 50px;
-  font-weight: 400;
+  font-weight: 500;
   padding-top: 0px;
 }
 
