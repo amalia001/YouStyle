@@ -1,0 +1,80 @@
+{
+    "salons": [
+      {
+        "name": "Chic Beauty Salon",
+        "address": "123 Main Street, Cityville",
+        "phone": "+1 (555) 123-4567",
+        "schedule": {
+          "monday": "9:00 AM - 6:00 PM",
+          "tuesday": "9:00 AM - 6:00 PM",
+          "wednesday": "9:00 AM - 6:00 PM",
+          "thursday": "10:00 AM - 8:00 PM",
+          "friday": "10:00 AM - 8:00 PM",
+          "saturday": "11:00 AM - 4:00 PM",
+          "sunday": "Closed"
+        },
+        "picture": "https://www.liveabout.com/thmb/okSGx6EHZoM9q9mjvVhh5qg-QzI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1131682058-c8cacbdda474417498ba92091f6451f6.jpg"
+      },
+      {
+        "name": "Glamour Hair Studio",
+        "address": "456 Oak Avenue, Urbantown",
+        "phone": "+1 (555) 987-6543",
+        "schedule": {
+          "monday": "10:00 AM - 7:00 PM",
+          "tuesday": "10:00 AM - 7:00 PM",
+          "wednesday": "10:00 AM - 7:00 PM",
+          "thursday": "Closed",
+          "friday": "12:00 PM - 9:00 PM",
+          "saturday": "12:00 PM - 9:00 PM",
+          "sunday": "Closed"
+        },
+        "picture": "https://example.com/glamour-hair-studio.jpg"
+      },
+      {
+        "name": "Nail Bliss Spa",
+        "address": "789 Pine Street, Suburbia",
+        "phone": "+1 (555) 234-5678",
+        "schedule": {
+          "monday": "11:00 AM - 8:00 PM",
+          "tuesday": "11:00 AM - 8:00 PM",
+          "wednesday": "11:00 AM - 8:00 PM",
+          "thursday": "11:00 AM - 8:00 PM",
+          "friday": "11:00 AM - 8:00 PM",
+          "saturday": "11:00 AM - 8:00 PM",
+          "sunday": "Closed"
+        },
+        "picture": "https://example.com/nail-bliss-spa.jpg"
+      },
+      {
+        "name": "Modern Men's Barbershop",
+        "address": "101 Elm Street, Downtown",
+        "phone": "+1 (555) 345-6789",
+        "schedule": {
+          "monday": "9:00 AM - 7:00 PM",
+          "tuesday": "9:00 AM - 7:00 PM",
+          "wednesday": "9:00 AM - 7:00 PM",
+          "thursday": "9:00 AM - 7:00 PM",
+          "friday": "9:00 AM - 7:00 PM",
+          "saturday": "9:00 AM - 5:00 PM",
+          "sunday": "Closed"
+        },
+        "picture": "https://example.com/modern-mens-barbershop.jpg"
+      },
+      {
+        "name": "Relaxation Spa & Wellness",
+        "address": "222 Maple Avenue, Countryside",
+        "phone": "+1 (555) 876-5432",
+        "schedule": {
+          "monday": "10:00 AM - 6:00 PM",
+          "tuesday": "10:00 AM - 6:00 PM",
+          "wednesday": "10:00 AM - 6:00 PM",
+          "thursday": "10:00 AM - 6:00 PM",
+          "friday": "10:00 AM - 6:00 PM",
+          "saturday": "Closed",
+          "sunday": "Closed"
+        },
+        "picture": "https://example.com/relaxation-spa-wellness.jpg"
+      }
+    ]
+  }
+  

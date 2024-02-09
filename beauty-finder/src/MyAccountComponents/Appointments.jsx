@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Icon } from 'semantic-ui-react';
-// import '../MyAccount.css';
-// import profilepic from '../images/profilepic.jpg';
 
 const Appointments = () => {
     const [appointments, setAppointments] = useState([]);

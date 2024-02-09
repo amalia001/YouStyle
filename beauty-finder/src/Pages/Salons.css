@@ -1,35 +1,43 @@
-.salons-background-container{
-    
+.salons-background-container {
+
     /* padding: 30px; */
     margin-top: 75px;
     margin-bottom: 30px;
     padding-bottom: 30px;
 }
 
-.salons-title{
+.salons-title {
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: 400;
-    color:black;
+    color: black;
     /* background-color: #f5f5f5; */
     background-color: #caf0f8;
     padding: 50px;
 }
 
-.filters-sidebar-container{
+.page-main-panel {
+    display: flex;
+    /* flex-direction: column; */
+    /* width: 100%; */
+    justify-content: space-between;
+}
+
+.filters-sidebar-container {
     width: 20%;
     /* height: 30%; */
     margin: 25px;
     background-color: white;
     padding: 0px 0px 0px 0px;
     border-radius: 5px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     border: 1px solid #e1e1e1;
+    flex-shrink: 0;
 }
 
-.filters-title{
+.filters-title {
     font-family: 'Poppins', sans-serif;
-    color:black;
+    color: black;
     font-size: 17px;
     font-weight: 600;
     text-align: left;
@@ -40,9 +48,9 @@
     border-bottom: 1px solid #e1e1e1;
 }
 
-.filters-subtitle{
+.filters-subtitle {
     font-family: 'Poppins', sans-serif;
-    color:black;
+    color: black;
     font-size: 15px;
     font-weight: 520;
     padding-top: 40px;
@@ -50,10 +58,120 @@
     padding-left: 30px;
 }
 
-.filters{
+.filters {
     font-family: 'Poppins', sans-serif;
-    color:black;
+    color: black;
     text-align: left;
     margin-left: 40px;
     margin-top: 20px;
 }
+
+
+.main-content-container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 100%;
+}
+
+
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 25px;
+    height: 75px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+
+    flex: 1;
+    /* Make the input take remaining space */
+    margin-right: 10px;
+}
+
+
+.search-bar-container .ui.dropdown {
+    width: 30%;
+    /* Set width for dropdowns */
+    margin-right: 10px;
+    /* Add margin between dropdowns */
+}
+
+.search-bar-container .ui.dropdown:last-child {
+    margin-right: 0;
+    /* No margin for the last dropdown */
+}
+
+.payment-methods {
+    display: flex;
+    align-items: center;
+}
+
+.ui.input>input {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+
+.additional-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 0px 25px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #f5f5f5; 
+}
+
+.results-count {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 13px;
+}
+
+.sort-dropdown {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-right: 10px;
+    }
+
+    .ui.dropdown {
+        width: 120px; /* Adjust the width as needed */
+    }
+}
+
+.view-options {
+    font-size: 20px;
+
+    .icon {
+        margin-right: 10px;
+        cursor: pointer;
+        transition: color 0.3s; /* Add a smooth transition effect on color change */
+        color: rgb(83, 83, 83);
+    }
+
+    .icon.active {
+        color: #00a2d8; /* Change the color for the active state */
+    }
+
+    .icon:hover {
+        color: #00a2d8; /* Change the color on hover */
+    }
+}
+
+.icon.map {
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(83, 83, 83);
+}
+

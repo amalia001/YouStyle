@@ -43,7 +43,8 @@ def create_client():
         cursor = mysql.connection.cursor()
 
         # Execute a simple query to insert a new client into the 'clients' table
-        cursor.execute("INSERT INTO clients (first_name, last_name, phone_number, password) VALUES (%s, %s, %s, %s)", (first_name, last_name, phone_number, password))
+        print()
+        cursor.execute("INSERT INTO clients (first_name, last_name, phone_number, pswd) VALUES ( %s, %s, %s, %s)", ( first_name, last_name, phone_number, password))
 
         # Commit the transaction
         mysql.connection.commit()
