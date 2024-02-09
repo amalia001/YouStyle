@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const Portfolio = () => {
+const Portfolio = ({onChange}) => {
     const [uploadedPhotos, setUploadedPhotos] = useState([]);
     const maxPhotos = 3;
     const fileInputRef = useRef(null);
@@ -9,13 +9,30 @@ const Portfolio = () => {
         const files = event.target.files;
 
         const newPhotos = Array.from(files);
+    
+        newPhotos.forEach(file => {
+            console.log('File Name:', file.name);
+            console.log('File Type:', file.type);
+            console.log('File Size:', file.size, 'bytes');
+    
+            const tempUrl = URL.createObjectURL(file);
+            console.log('Temporary URL:', tempUrl);
+        });
+    
         setUploadedPhotos([...uploadedPhotos, ...newPhotos]);
+        onChange({name: 'photos', value: uploadedPhotos});
     };
 
     const handleDeletePhoto = (index) => {
         const updatedPhotos = [...uploadedPhotos];
+    
+        // Revoke the URL of the photo being deleted
+        const photoToDelete = updatedPhotos[index];
+        URL.revokeObjectURL(photoToDelete);
+    
         updatedPhotos.splice(index, 1);
         setUploadedPhotos(updatedPhotos);
+        onChange({name: 'photos', value: null});
     };
 
     const triggerFileInput = () => {
@@ -45,7 +62,7 @@ const Portfolio = () => {
                     <div key={index} className="uploaded-photo">
                         <img
                             src={URL.createObjectURL(photo)}
-                            alt={`Uploaded Photo ${index + 1}`}
+                            alt={`Uploaded ${index + 1}`}
                             className="thumbnail"
                         />
                         <button onClick={() => handleDeletePhoto(index)}>X</button>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import StylistForm from './StylistForm.jsx'; // Assuming you have a separate StylistForm component
 
-const SalonServices = () => {
+const SalonServices = ({onChange}) => {
     const [stylists, setStylists] = useState([]);
     const [isAddingStylist, setIsAddingStylist] = useState(false);
     const [editedIndex, setEditedIndex] = useState(null);
@@ -18,6 +18,7 @@ const SalonServices = () => {
     const handleFormSubmit = (stylistData) => {
         setStylists([...stylists, stylistData]);
         setIsAddingStylist(false);
+        onChange({name:stylists.name, value:stylists});
     };
 
     const handleCancel = () => {

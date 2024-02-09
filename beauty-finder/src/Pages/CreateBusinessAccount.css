@@ -87,6 +87,38 @@
   margin-bottom: 10px;
 }
 
+.positive {
+  border: 2px solid #4CAF50;
+  background-color: #e8f5e9;
+  position: relative;
+}
+
+.positive::after {
+  content: "\2713";
+  color: #4CAF50;
+  font-weight: bold;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.negative {
+  border: 2px solid #f44336;
+  background-color: #ffebee;
+  position: relative;
+}
+
+.negative::after {
+  content: "\2717";
+  color: #f44336;
+  font-weight: bold;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 input::placeholder {
   color: black; 
 }

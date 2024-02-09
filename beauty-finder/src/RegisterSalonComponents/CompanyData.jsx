@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { Form, Dropdown, Input, Button } from 'semantic-ui-react';
+import { Form, Dropdown, Button } from 'semantic-ui-react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const CompanyData = () => {
-
+const CompanyData = ({ onChange }) => {
     const paymentOptions = [
         { key: 'creditCard', text: 'Credit Card', value: 'creditCard' },
         { key: 'Cash', text: 'Cash', value: 'Cash' },
     ];
 
-    const [logo, setLogo] = useState(null); // State to store the selected logo file
     const [logoPreview, setLogoPreview] = useState(null);
     const [selectedCity, setSelectedCity] = useState(null);
     const [description, setDescription] = useState('');
@@ -20,9 +18,8 @@ const CompanyData = () => {
         const file = event.target.files[0];
 
         if (file) {
-            setLogo(file);
+            onChange({name:'logoImage', value:file});
 
-            // Create a preview for the selected logo
             const reader = new FileReader();
             reader.onloadend = () => {
                 setLogoPreview(reader.result);
@@ -32,7 +29,7 @@ const CompanyData = () => {
     };
 
     const handleDeleteLogo = () => {
-        setLogo(null);
+        onChange({name:'logoImage', value:null});
         setLogoPreview(null);
     };
 
@@ -47,6 +44,7 @@ const CompanyData = () => {
 
     const handleCityChange = (event, { value }) => {
         setSelectedCity(value);
+        onChange({name:'city', value:selectedCity});
     };
 
     const quillModules = {
@@ -97,11 +95,11 @@ const CompanyData = () => {
                 <div className="input-wrapper"></div>
                 <div className='input-wrapper'>
                     <label>Company name:</label>
-                    <input type="text" placeholder="Company name" />
+                    <input type="text" placeholder="Company name" name='companyName' onChange={(e) => onChange({name: e.target.name, value: e.target.value})} />
                 </div>
                 <div className='input-wrapper'>
                     <label>Contact phone number:</label>
-                    <input type="text" placeholder="Phone number" />
+                    <input type="tel" placeholder="Phone number" name='salonPhone' onChange={(e) => onChange({name: e.target.name, value: e.target.value})} />
                 </div>
                 <div className='input-wrapper'>
                     <label>Accepted payment methods:</label>
@@ -115,7 +113,7 @@ const CompanyData = () => {
                 </div>
                 <div className='input-wrapper'>
                     <label>Website:</label>
-                    <input type="text" placeholder="Email" />
+                    <input type="text" placeholder="Website" name='website' onChange={(e) => onChange({name: e.target.name, value: e.target.value})} />
                 </div>
                 <div className='input-wrapper'>
                     <label>City:</label>
@@ -131,14 +129,14 @@ const CompanyData = () => {
                 </div>
                 <div className='input-wrapper'>
                     <label>Address:</label>
-                    <input type="text" placeholder="Last Name" />
+                    <input type="text" placeholder="Last Name" name='salonAddress' onChange={(e) => onChange({name: e.target.name, value: e.target.value})} />
                 </div>
                 <div className='description-input-container'>
                     <label>Description:</label>
                     <ReactQuill  
                         style={{ maxWidth: '500px',backgroundColor: 'white',width: '100%', minHeight: '100px' /* Add other styles as needed */ }}
                         value={description}
-                        onChange={setDescription}
+                        onChange={(value) => {setDescription(value); onChange({name:'description', value:value})}}
                         modules={quillModules}
                         formats={quillFormats}
                         placeholder="Enter a description"

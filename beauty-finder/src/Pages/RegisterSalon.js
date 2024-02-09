@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Icon } from 'semantic-ui-react';
 import CompanyData from '../RegisterSalonComponents/CompanyData.jsx';
 import SalonServices from '../RegisterSalonComponents/SalonServices.jsx';
@@ -8,15 +8,20 @@ import WorkingSchedule from '../RegisterSalonComponents/WorkingSchedule.jsx';
 import './GlobalStyles.css';
 import './RegisterSalon.css';
 
+import { AppContext } from '../Classes/Application';
+
 const pageNames = {
-    'PersonalData': { "Component": <PersonalData />, 'Next': 'CompanyData', 'Text': 'Owner Personal Data' },
-    'CompanyData': { "Component": <CompanyData />, 'Next': 'Portfolio', 'Text': 'Company Data' },
-    'Portfolio': { "Component": <Portfolio />, 'Next': 'WorkingSchedule', 'Text': 'Portfolio' },
-    'WorkingSchedule': { "Component": <WorkingSchedule />, 'Next': 'SalonServices', 'Text': 'Working Schedule' },
-    'SalonServices': { "Component": <SalonServices />, 'Next': null, 'Text': 'Salon Services' },
+    'PersonalData': { "Component": (props) => <PersonalData {...props} />, 'Next': 'CompanyData', 'Text': 'Owner Personal Data' },
+    'CompanyData': { "Component": (props) => <CompanyData {...props} />, 'Next': 'Portfolio', 'Text': 'Company Data' },
+    'Portfolio': { "Component": (props) => <Portfolio {...props} />, 'Next': 'WorkingSchedule', 'Text': 'Portfolio' },
+    'WorkingSchedule': { "Component": (props) => <WorkingSchedule {...props} />, 'Next': 'SalonServices', 'Text': 'Working Schedule' },
+    'SalonServices': { "Component": (props) => <SalonServices {...props} />, 'Next': null, 'Text': 'Salon Services' },
 };
 
 const RegisterSalon = () => {
+    const { application } = useContext(AppContext);
+
+    const [formDataInfo, setFormDataInfo] = useState({});
     const [selectedPage, setSelectedPage] = useState('PersonalData');
 
     const handlePageChange = (page) => {
@@ -48,17 +53,31 @@ const RegisterSalon = () => {
                     ))}
                 </div>
                 <div className="register-salon-main-panel" >
-                    {pageNames[selectedPage]["Component"]}
+                    {pageNames[selectedPage]["Component"]({
+                        onChange: (data) => {
+                            const { name, value } = data;
+                            setFormDataInfo(prevForm => ({ ...prevForm, [name]: value }));
+                        }
+                    })}
 
                     <div className="horizontal-bar">
-                        {pageNames[selectedPage]["Next"] === null ? null :
+                        {pageNames[selectedPage]["Next"] === null ?
                             <Button
-                            className='next-button'
+                                className='next-button'
+                                onClick={() => {
+                                    application.setBusinessFormData(formDataInfo);
+                                    console.log(application);
+                                }}
+                            >
+                                <span>Continue</span>
+                            </Button>
+                            : <Button
+                                className='next-button'
                                 onClick={() => {
                                     pageNames[selectedPage]["Done"] = true;
                                     handlePageChange(pageNames[selectedPage]["Next"])
                                 }}
-                                
+
                             ><span >Next page</span>
                             </Button>
                         }

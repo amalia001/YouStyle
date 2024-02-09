@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Checkbox } from 'semantic-ui-react'
 
-const WorkingSchedule = () => {
+const WorkingSchedule = ({onChange}) => {
     const [schedule, setSchedule] = useState({
         monday: { enabled: true, start: '08:00', closing: '20:00' },
         tuesday: { enabled: true, start: '08:00', closing: '20:00' },
@@ -30,6 +30,7 @@ const WorkingSchedule = () => {
                 [type]: value,
             },
         }));
+        onChange({name:'schedule', value:schedule});
     };
 
 

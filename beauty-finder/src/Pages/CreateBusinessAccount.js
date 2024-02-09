@@ -1,33 +1,27 @@
-import React, { useState } from 'react';
-import { Form, Input, Icon, Button, Label, Image, Dropdown, } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Form, Input, Icon, Button } from 'semantic-ui-react';
+import { useNavigate  } from 'react-router-dom';
+
 import registerImage from '../images/salon_computer3.png';
 import './CreateBusinessAccount.css';
 
+import { AppContext } from '../Classes/Application';
+import { createForm } from '../Classes/BusinessForm';
+
 const CreateBusinessAccount = () => {
-    const [businessName, setBusinessName] = useState('');
-    const [businessEmail, setBusinessEmail] = useState('');
-    const [businessPassword, setBusinessPassword] = useState('');
+    const { application } = useContext(AppContext);
+    const navigate = useNavigate ();
+
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+        confirmPassword: ''
+    });
 
     const [showPassword, setShowPassword] = useState(false);
-    const [phoneNumber, setPhoneNumber] = useState('');
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
-    };
-
-
-    const handleInputChange = (event, { value }) => {
-        setPhoneNumber(value);
-    };
-
-    const handleCheckPhoneNumber = () => {
-        // Perform your checks or validations here
-        if (/^\d{10}$/.test(phoneNumber)) {
-            return true;
-        } else {
-            return false;
-        }
     };
 
     const buttonStyle = {
@@ -57,34 +51,39 @@ const CreateBusinessAccount = () => {
     };
 
     const handleButtonClick = () => {
-        // Redirect to another page when the button is clicked
-        window.location.href = '/register-salon';
+        const {email, password} = formData;
+        application.setBusinessForm(createForm(email, password));
+        navigate('/register-salon');
     };
 
-    const handleSubmit = (e) => {
-        // e.preventDefault();
-        console.log(businessName, businessEmail, businessPassword);
-    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevForm => ({ ...prevForm, [name]: value }));
+    };
 
+
+    const passwordsMatch = formData.password === formData.confirmPassword;
     return (
         <div className='background-container'>
             <div className='home-title-container'>
                 <h1> Sign Up</h1>
                 <p>You're one step away from getting your company on YouStyle.</p>
                 <div className='form-container'>
-                    <Form onSubmit={handleSubmit} className="custom-business-form">
+                    <Form className="custom-business-form">
                         {/* <div className='business-input-wrapper'> */}
-                            <label>Email:</label>
-                            <Input className='custom-input-field' placeholder='Email' type='email' />
+                        <label>Email:</label>
+                        <Input className='custom-input-field' name="email" placeholder='Email' type='email' onChange={handleChange} />
                         {/* </div> */}
-                        
+
                         <label>Password:</label>
-                        <Input className='custom-input-field' placeholder='Password' type={showPassword ? 'text' : 'password'}
+                        <Input className={`custom-input-field ${passwordsMatch ? 'positive' : 'negative'}`} name="password" placeholder='Password' type={showPassword ? 'text' : 'password'}
                             icon={<Icon name={showPassword ? 'eye slash' : 'eye'} link onClick={togglePasswordVisibility} />}
+                            onChange={handleChange}
                         />
                         <label>Confirm Password:</label>
-                        <Input className='custom-input-field' placeholder='Confirm Password' type={showPassword ? 'text' : 'password'}
+                        <Input className={`custom-input-field ${passwordsMatch ? 'positive' : 'negative'}`} name="confirmPassword" placeholder='Confirm Password' type={showPassword ? 'text' : 'password'}
                             icon={<Icon name={showPassword ? 'eye slash' : 'eye'} link onClick={togglePasswordVisibility} />}
+                            onChange={handleChange}
                         />
 
                         <Button
